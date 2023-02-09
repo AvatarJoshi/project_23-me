@@ -1,27 +1,38 @@
-# data_analysis_23-me
+# Sales Data Analysis - 23&Me
+**Purpose**
+To analyze a dataset containing 50 weeks worth of purchases at 23&Me. 
 
-Sales Data Analysis
+## Resources
+[datasets.zip](/resources/datasets.zip) - Contains 50 weeks of 23&Me purchase data
 
-Download Datasets
-This data project has been used as a take-home assignment in the recruitment process for the data science positions at 23andMe.
+## Deliverable 1: Plot daily sales for all 50 weeks.
+![daily_sales](/resources/daily_sales.png)
 
-Assignment
-Please answer the questions below based on the data provided:
+## Deliverable 2: What date did the sudden change in sales occur?
+To determine the date the change in sales occurred, I created a column that calculates the difference between the current day's sales and that of the previous. Then I determined the row/date where the max change occurred (2013-04-29).
 
-Plot daily sales for all 50 weeks.
-It looks like there has been a sudden change in daily sales. What date did it occur?
-Is the change in daily sales at the date you selected statistically significant? If so, what is the p-value?
-Does the data suggest that the change in daily sales is due to a shift in the proportion of male-vs-female customers? Please use plots to support your answer (a rigorous statistical analysis is not necessary).
+![sales_change](/resources/sales_change.png)
+
+## Deliverable 3: Is the change in daily sales at the date you selected statistically significant?
+The change in daily sales at 2013-04-29 was compared to the sales amount from all other sales. It was statistically significant (p-value 4.5*10^-85).
+
+
+## Deliverable 4: Does the data suggest that the change in daily sales is due to a shift in the proportion of male-vs-female customers?
+![daily_sales](./resources/gender_sales.png)
+
+## Deliverable 5: What is the percentage of sales in each daypart over all 50 weeks?
 Assume a given day is divided into four dayparts:
-night (12:00AM - 6:00AM),
-morning (6:00AM - 12:00PM),
-afternoon (12:00PM - 6:00PM),
-evening (6:00PM - 12:00AM).
-What is the percentage of sales in each daypart over all 50 weeks?
-Data Description
-The datasets/ directory contains fifty CSV files (one per week) of timestamped sales data. Each row in a file has two columns:
 
-sale_time - The timestamp on which the sale was made e.g. 2012-10-01 01:42:22
-purchaser_gender - The gender of the person who purchased (male or female)
-Practicalities
-Please work on the questions in the displayed order. Make sure that the solution reflects your entire thought process - it is more important how the code is structured rather than the final answers. You are expected to spend no more than 1-2 hours solving this project.
+night (12:00AM - 6:00AM),
+
+morning (6:00AM - 12:00PM),
+
+afternoon (12:00PM - 6:00PM),
+
+evening (6:00PM - 12:00AM).
+
+A function was created to break the day into "night", "morning", "afternoon", and "evening" time frames. Then the total sales for each part of the day was calculated across all 50 weeks.
+
+
+![day_part](./resources/day_part.png)
+
